@@ -1,30 +1,31 @@
 #include<crtdefs.h>
 int main()
 {
-    int n, i, num, max, min;
-
-    printf("Enter number of elements: ");
+    int a[100], n, i, max, min;
+    printf("Enter how many numbers: ");
     scanf("%d", &n);
-
-    printf("Enter number 1: ");
-    scanf("%d", &num);
-
-    max = min = num;
-
-    for(i = 2; i <= n; i++)
+    printf("Enter the %d numbers:\n", n);
+    
+    for(i=0;i<n;i++)
     {
-        printf("Enter number %d: ", i);
-        scanf("%d", &num);
-
-        if(num > max)
-            max = num;
-
-        if(num < min)
-            min = num;
-    }
-
-    printf("Maximum = %d\n", max);
-    printf("Minimum = %d", min);
-
-    return 0;
+    	scanf("%d", &a[i]);
+	}
+	
+	max=min=a[0];
+	
+	for(i=1;i<n;i++)
+	{
+		if(a[i]>max)
+		{
+			max=a[i];
+		}
+		if(a[i]<min)
+		{
+			min=a[i];
+		}
+	}
+	printf("Maximum=%d\n", max);
+	printf("Minimum=%d", min);
+	
+	return 0;
 }
